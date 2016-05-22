@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Goy-xY-yjh">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--同异步-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYN-hM-3z0">
+                                <rect key="frame" x="20" y="513" width="134" height="30"/>
+                                <state key="normal" title="主队列"/>
+                                <state key="disabled" title="主队列死锁"/>
+                                <connections>
+                                    <action selector="mainQueueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7k-JQ-nfa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c67-wt-ueg">
+                                <rect key="frame" x="162" y="513" width="134" height="30"/>
+                                <state key="normal" title="串行队列"/>
+                                <connections>
+                                    <action selector="serialQueueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iid-WF-0Gm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FmO-gL-oxH">
+                                <rect key="frame" x="304" y="513" width="134" height="30"/>
+                                <state key="normal" title="全局队列"/>
+                                <connections>
+                                    <action selector="globalQueueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iss-TA-Pg4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-Eu-ELo">
+                                <rect key="frame" x="446" y="513" width="134" height="30"/>
+                                <state key="normal" title="并行队列"/>
+                                <connections>
+                                    <action selector="concurrentQueueButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I13-yR-8K4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-SR-S3Q">
+                                <rect key="frame" x="20" y="475" width="276" height="30"/>
+                                <state key="normal" title="同步：sync"/>
+                                <connections>
+                                    <action selector="syncButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apm-QJ-0ap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="do3-cU-2aa">
+                                <rect key="frame" x="304" y="475" width="276" height="30"/>
+                                <state key="normal" title="异步：async"/>
+                                <connections>
+                                    <action selector="asyncButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FH7-af-V15"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSB-6X-zIe">
+                                <rect key="frame" x="20" y="440" width="181.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="队列内外顺序测试"/>
+                                <connections>
+                                    <action selector="settingTestButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rPw-5o-Yyt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCH-wz-mBF">
+                                <rect key="frame" x="209.5" y="440" width="181" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="队列内外线程测试"/>
+                                <connections>
+                                    <action selector="settingTestButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRO-4g-Hg2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-Gb-5RD">
+                                <rect key="frame" x="398" y="440" width="181.5" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="队列任务顺序测试"/>
+                                <connections>
+                                    <action selector="settingTestButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6t-6y-i75"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hSB-6X-zIe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5Ro-na-JU5"/>
+                            <constraint firstItem="kpl-Eu-ELo" firstAttribute="height" secondItem="FYN-hM-3z0" secondAttribute="height" id="6ZP-MK-Ghx"/>
+                            <constraint firstItem="kpl-Eu-ELo" firstAttribute="leading" secondItem="FmO-gL-oxH" secondAttribute="trailing" constant="8" id="6ny-Rd-dgz"/>
+                            <constraint firstItem="c67-wt-ueg" firstAttribute="leading" secondItem="FYN-hM-3z0" secondAttribute="trailing" constant="8" id="7We-Rs-e5G"/>
+                            <constraint firstAttribute="trailing" secondItem="qOe-Gb-5RD" secondAttribute="trailing" constant="20" id="8hx-SR-dj5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kpl-Eu-ELo" secondAttribute="bottom" constant="8" id="9lv-np-SYj"/>
+                            <constraint firstItem="qOe-Gb-5RD" firstAttribute="width" secondItem="hSB-6X-zIe" secondAttribute="width" id="Be4-4G-scM"/>
+                            <constraint firstItem="c67-wt-ueg" firstAttribute="height" secondItem="FYN-hM-3z0" secondAttribute="height" id="ECm-li-A4N"/>
+                            <constraint firstItem="FYN-hM-3z0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Fmi-Pe-FSe"/>
+                            <constraint firstItem="do3-cU-2aa" firstAttribute="bottom" secondItem="0gj-SR-S3Q" secondAttribute="bottom" id="KFl-3C-xla"/>
+                            <constraint firstItem="YCH-wz-mBF" firstAttribute="width" secondItem="hSB-6X-zIe" secondAttribute="width" id="Mjw-ZQ-P8Y"/>
+                            <constraint firstItem="0gj-SR-S3Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="RNH-yZ-S80"/>
+                            <constraint firstItem="qOe-Gb-5RD" firstAttribute="height" secondItem="hSB-6X-zIe" secondAttribute="height" id="WBr-cu-H2p"/>
+                            <constraint firstItem="do3-cU-2aa" firstAttribute="width" secondItem="0gj-SR-S3Q" secondAttribute="width" id="Wwz-5h-uHH"/>
+                            <constraint firstItem="FmO-gL-oxH" firstAttribute="bottom" secondItem="FYN-hM-3z0" secondAttribute="bottom" id="Ysw-Tc-DdT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FYN-hM-3z0" secondAttribute="bottom" constant="8" id="Zdf-SZ-G7i"/>
+                            <constraint firstItem="YCH-wz-mBF" firstAttribute="height" secondItem="hSB-6X-zIe" secondAttribute="height" id="ZwN-HZ-fZS"/>
+                            <constraint firstItem="YCH-wz-mBF" firstAttribute="bottom" secondItem="hSB-6X-zIe" secondAttribute="bottom" id="avx-br-5ft"/>
+                            <constraint firstItem="0gj-SR-S3Q" firstAttribute="top" secondItem="hSB-6X-zIe" secondAttribute="bottom" constant="8" id="b3s-lF-P0E"/>
+                            <constraint firstItem="FmO-gL-oxH" firstAttribute="height" secondItem="FYN-hM-3z0" secondAttribute="height" id="biY-0M-hTL"/>
+                            <constraint firstItem="YCH-wz-mBF" firstAttribute="leading" secondItem="hSB-6X-zIe" secondAttribute="trailing" constant="8" id="c0N-H9-fIf"/>
+                            <constraint firstItem="do3-cU-2aa" firstAttribute="height" secondItem="0gj-SR-S3Q" secondAttribute="height" id="c9j-Qu-IPa"/>
+                            <constraint firstItem="qOe-Gb-5RD" firstAttribute="bottom" secondItem="hSB-6X-zIe" secondAttribute="bottom" id="cP8-wW-8j7"/>
+                            <constraint firstItem="c67-wt-ueg" firstAttribute="bottom" secondItem="FYN-hM-3z0" secondAttribute="bottom" id="cVp-NE-kPc"/>
+                            <constraint firstItem="c67-wt-ueg" firstAttribute="width" secondItem="FYN-hM-3z0" secondAttribute="width" id="dK7-f7-rDm"/>
+                            <constraint firstItem="do3-cU-2aa" firstAttribute="leading" secondItem="0gj-SR-S3Q" secondAttribute="trailing" constant="8" id="iRi-rW-twu"/>
+                            <constraint firstItem="kpl-Eu-ELo" firstAttribute="width" secondItem="FYN-hM-3z0" secondAttribute="width" id="kci-Hc-szH"/>
+                            <constraint firstItem="FmO-gL-oxH" firstAttribute="width" secondItem="FYN-hM-3z0" secondAttribute="width" id="otw-dg-mc1"/>
+                            <constraint firstItem="qOe-Gb-5RD" firstAttribute="leading" secondItem="YCH-wz-mBF" secondAttribute="trailing" constant="8" id="pw7-8U-RSn"/>
+                            <constraint firstItem="FYN-hM-3z0" firstAttribute="top" secondItem="0gj-SR-S3Q" secondAttribute="bottom" constant="8" id="qFG-9i-iue"/>
+                            <constraint firstAttribute="trailing" secondItem="kpl-Eu-ELo" secondAttribute="trailing" constant="20" id="qO6-vM-YhH"/>
+                            <constraint firstItem="FmO-gL-oxH" firstAttribute="leading" secondItem="c67-wt-ueg" secondAttribute="trailing" constant="8" id="rVG-ZW-p6C"/>
+                            <constraint firstAttribute="trailing" secondItem="do3-cU-2aa" secondAttribute="trailing" constant="20" id="va2-0I-8uT"/>
+                            <constraint firstItem="kpl-Eu-ELo" firstAttribute="bottom" secondItem="FYN-hM-3z0" secondAttribute="bottom" id="wY1-R2-hFc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="同异步" id="mfm-3j-0F0"/>
+                    <connections>
+                        <outlet property="asyncButton" destination="do3-cU-2aa" id="7is-P6-EEg"/>
+                        <outlet property="mainQueueButton" destination="FYN-hM-3z0" id="VFX-je-XyT"/>
+                        <outlet property="syncButton" destination="0gj-SR-S3Q" id="xAB-4J-ZUU"/>
+                        <outlet property="testButton1" destination="hSB-6X-zIe" id="ys1-9M-OzX"/>
+                        <outlet property="testButton2" destination="YCH-wz-mBF" id="cbg-dW-GmN"/>
+                        <outlet property="testButton3" destination="qOe-Gb-5RD" id="pfR-7f-gcE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="-68"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="HN2-gT-JqE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Goy-xY-yjh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GX6-8y-HjV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="nKz-hA-jgT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CoK-eR-d7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="280" y="337"/>
+        </scene>
+    </scenes>
+</document>
