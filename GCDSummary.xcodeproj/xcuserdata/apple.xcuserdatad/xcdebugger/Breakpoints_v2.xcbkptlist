@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "-executeGCD:queueType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-executeGCD:queueType:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "-executeGCD:queueType:"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-GCDdeadlockCases"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "-executeGCD:queueType:"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
+            landmarkName = "-GCDdeadlockCases"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "-executeGCD:queueType:"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
+            landmarkName = "-GCDdeadlockCases"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +90,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCDSummary/ViewController.m"
-            timestampString = "485376332.013039"
+            timestampString = "485666167.169186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-executeGCD:queueType:"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "-GCDdeadlockCases"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GCDSummary/ViewController.m"
+            timestampString = "485666167.169186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "-GCDdeadlockCases"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

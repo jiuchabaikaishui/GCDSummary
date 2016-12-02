@@ -65,9 +65,10 @@ typedef NS_ENUM(NSInteger,QueueType) {
         _queueArr = @[
                       dispatch_get_main_queue(),//主队列
                       dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL),//串行队列
-                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),//全局队列
+                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),//全局队列
                       dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT)//并行队列
                       ];
+        
     }
     
     return _queueArr;
@@ -212,7 +213,6 @@ typedef NS_ENUM(NSInteger,QueueType) {
     
     if (!self.testButton1.enabled) {
         if (isSycn) {
-            NSLog(@"同步");
             dispatch_sync(self.queueArr[type], ^{
                 NSLog(@"1");
             });
@@ -221,7 +221,6 @@ typedef NS_ENUM(NSInteger,QueueType) {
         }
         else
         {
-            NSLog(@"异步");
             dispatch_async(self.queueArr[type], ^{
                 NSLog(@"1");
             });
@@ -275,53 +274,64 @@ typedef NS_ENUM(NSInteger,QueueType) {
  */
 - (void)GCDdeadlockCases
 {
-    //案例1
-    dispatch_sync(self.queueArr[QueueTypeMain], ^{
-        NSLog(@"1"); // 任务1
-    });
-    NSLog(@"2"); // 任务2
+//    //案例1
+//    dispatch_sync(self.queueArr[QueueTypeMain], ^{
+//        NSLog(@"1"); // 任务1
+//    });
+//    NSLog(@"2"); // 任务2
+//    
+//    //案例2
+//    dispatch_async(self.queueArr[QueueTypeMain], ^{
+//        NSLog(@"1"); // 任务1
+//    });
+//    NSLog(@"2"); // 任务2
+//    
+//    //案例3
+//    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
+//        NSLog(@"1"); // 任务1
+//    });
+//    NSLog(@"2"); // 任务2
+//    
+//    //案例4
+//    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
+//        dispatch_sync(self.queueArr[QueueTypeMain], ^{
+//            NSLog(@"1"); // 任务1
+//        });
+//        NSLog(@"2"); // 任务2
+//    });
+//    NSLog(@"3"); // 任务3
+//
+//    //案例5
+//    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
+//        dispatch_sync(self.queueArr[QueueTypeSerial], ^{
+//            NSLog(@"1"); // 任务1
+//        });
+//        NSLog(@"2"); // 任务2
+//    });
+//    NSLog(@"3"); // 任务3
+//
+//    //案例六
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        NSLog(@"1"); // 任务1
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            NSLog(@"2"); // 任务2
+//        });
+//        NSLog(@"3"); // 任务3
+//    });
+//    NSLog(@"4"); // 任务4
+//    while (1) {
+//    }
+//    NSLog(@"5"); // 任务5
     
-    //案例2
-    dispatch_async(self.queueArr[QueueTypeMain], ^{
-        NSLog(@"1"); // 任务1
-    });
-    NSLog(@"2"); // 任务2
     
-    //案例3
-    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
-        NSLog(@"1"); // 任务1
-    });
-    NSLog(@"2"); // 任务2
-    
-    //案例4
-    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
-        dispatch_sync(self.queueArr[QueueTypeMain], ^{
-            NSLog(@"1"); // 任务1
-        });
-        NSLog(@"2"); // 任务2
-    });
-    NSLog(@"3"); // 任务3
-
-    //案例5
-    dispatch_sync(self.queueArr[QueueTypeSerial], ^{
-        dispatch_sync(self.queueArr[QueueTypeSerial], ^{
-            NSLog(@"1"); // 任务1
-        });
-        NSLog(@"2"); // 任务2
-    });
-    NSLog(@"3"); // 任务3
-
-    //案例六
+    NSLog(@"1"); // 任务1
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"1"); // 任务1
+        NSLog(@"2"); // 任务2
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"2"); // 任务2
+            NSLog(@"3"); // 任务3
         });
-        NSLog(@"3"); // 任务3
+        NSLog(@"4"); // 任务4
     });
-    NSLog(@"4"); // 任务4
-    while (1) {
-    }
     NSLog(@"5"); // 任务5
 }
 
